@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Домашняя страница</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="p-3"></div>
+<div class="container">
+  <div class="row gx-1">
+    <div class="col-sm-2">
+     <div class="p-3 border bg-light text-center"><a href="#">Тарифы</a></div>
+    </div>
+    <div class="col-sm-2">
+      <div class="p-3 border bg-light text-center"><a href="#">Войти</a></div>
+    </div>
+      <div class="col-sm-2">
+      <div class="p-3 border bg-light text-center"><a href="#">Заказ замерщика</a></div>
+    </div>
+      <div class="col-sm-2">
+      <div class="p-3 border bg-light text-center"><a href="#">Пополнить балланс</a></div>
+    </div>
+      <div class="col-sm-2">
+      <div class="p-3 border bg-light text-center"><a href="#">Интерет магазин</a></div>
+    </div>
+      <div class="col-sm-2">
+      <div class="p-3 border bg-light text-center"><a href={% url 'about' %}>О нас</a></div>
+    </div>
+    <div class="p-3"></div>
+
+    <div class="card" style="width: 300px; margin: 20px">
+      <div class="card-body">
+        <h3 class="card-title"> Тариф доступа к видео Мега:</h3>
+        <H4 class="card-text text-center"></H4>
+          <div class="p-2"></div>
+          <h5 class="card-text">- Безлимит трафика;</h5>
+          <div class="p-2"></div>
+          <h5 class="card-text">- Доступ до 30 камер;</h5>
+          <div class="p-2"></div>
+          <h5 class="card-text">- Стоимость 10р.</h5>
+          <div class="p-2"></div>
+        <a href="#" class="btn btn-primary">Заказать тариф</a>
+      </div>
+    </div>
+    <div class="card" style="width: 300px; margin: 20px">
+      <div class="card-body">
+        <h3 class="card-title"> Тариф доступа к видео Мини:</h3>
+        <H4 class="card-text text-center"></H4>
+          <div class="p-2"></div>
+          <h5 class="card-text">- Безлимит трафика;</h5>
+          <div class="p-2"></div>
+          <h5 class="card-text">- Доступ до 5 камер;</h5>
+          <div class="p-2"></div>
+          <h5 class="card-text">- Стоимость 1р.</h5>
+          <div class="p-2"></div>
+        <a href="#" class="btn btn-primary">Заказать тариф</a>
+      </div>
+    </div>
+    <div class="card" style="width: 300px; margin: 20px">
+      <div class="card-body">
+        <h3 class="card-title"> Тариф доступа к видео Макси:</h3>
+        <H4 class="card-text text-center"></H4>
+          <div class="p-2"></div>
+          <h5 class="card-text">- Безлимит трафика;</h5>
+          <div class="p-2"></div>
+          <h5 class="card-text">- Доступ до 15 камер;</h5>
+          <div class="p-2"></div>
+          <h5 class="card-text">- Стоимость 15р.</h5>
+          <div class="p-2"></div>
+        <a href="#" class="btn btn-primary">Заказать тариф</a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
