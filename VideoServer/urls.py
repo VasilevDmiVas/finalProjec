@@ -10,3 +10,4 @@ urlpatterns = [
     path('balans/', views.balans, name='balans'),
     path('shop/', views.shop, name='shop'),
 ]
+
