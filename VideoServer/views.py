@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
 
 
+# try:
 def login_user(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -12,43 +13,37 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(reverse('room'))
-    else:
-        return HttpResponseRedirect(reverse('room'))
+            return HttpResponse('Страница в разработке')
+        else:
+            return HttpResponse('Пользователь не найден либо пароль неверен')
 
 
 def logout_user(request):
     logout(request)
-    return HttpResponseRedirect(reverse('room_list'))
+    return HttpResponseRedirect(reverse('home'))
 
 
 def signup_user(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        email = request.POST.get('email')
-        password = request.POST.get('password')
-        confirm_password = request.POST.get('confirm_password')
+    try:
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            email = request.POST.get('email')
+            password = request.POST.get('password')
+            confirm_password = request.POST.get('confirm_password')
 
+            if not username or not email or not password or not confirm_password:
+                return HttpResponse('Не все поля заполнены повторите попытку')
 
-        if not username or not email or not password or not confirm_password:
+            if password != confirm_password:
+                return HttpResponse('Пароли не совпадают повторите попытку')
 
+            user = User.objects.create_user(username, email, password)
+            login(request, user)
+            return HttpResponse('Страница в разработке')
+        else:
             return render(request, 'signup.html')
-
-
-        if password != confirm_password:
-            # return HttpResponseRedirect(reverse('signup'))
-            return render(request, 'signup.html')
-
-
-        user = User.objects.create_user(username, email, password)
-        login(request, user)
-        # return HttpResponseRedirect(reverse('home'))
-        return render(request, 'signup.html')
-    else:
-        return render(request, 'signup.html')
-        # return HttpResponseRedirect(reverse('home'))
-
-
+    except:
+        return HttpResponse('Имя пользователя занято повторите попытку')
 
 
 def home(request):
